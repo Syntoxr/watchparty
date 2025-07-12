@@ -1,0 +1,107 @@
+@element_height: 20px;
+@background_color: #FA4252;
+@element_color: white;
+@transition_duration: 0.2s;
+@font_size: 14px;
+
+
+#wp-ui {
+  background-color: @background_color;
+  padding: 5px;
+  padding-bottom: 0;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  border: 0;
+  opacity: 0%;
+  transition: opacity 0.3s ease-in-out
+}
+
+#label-toggle {
+  float: right;
+  margin-bottom: 7px;
+  padding: 2px;
+  display: block;
+  width: @element_height;
+  height: @element_height;
+  background: @element_color;
+  cursor: pointer;
+}
+
+#wp-ui,
+button,
+input,
+#label-toggle {
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+form {
+  margin: 0 auto;
+  max-height: 0px;
+  max-width: 0px;
+  overflow: hidden;
+  transition: max-height @transition_duration ease-in-out, max-width @transition_duration ease-in-out;
+}
+
+button {
+  height: @element_height;
+  background-color: @element_color;
+  flex: 1;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 8px;
+  border: none;
+  color: black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  height: @element_height;
+  background-color: @element_color;
+  border: 0;
+  padding-left: 5px;
+  margin-right: 5px;
+  color: black;
+}
+
+#wp-config-form label {
+  font-size: 10px;
+  color: white;
+}
+
+
+button:hover,
+button:disabled,
+#label-toggle:hover {
+  filter: brightness(75%);;
+}
+
+#label-toggle:active,
+form:valid button:active,
+input:focus {
+  box-shadow: 0px 0px 0px;
+  transform: translate(3px, 3px);
+  outline: none;
+}
+
+
+//config visibility switch
+.toggle:checked+#label-toggle+#wp-config-form {
+  max-width: 354px;
+  max-height: 169px;
+  margin-right: 35px;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "watchparty",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:server": "npm run build --workspace=packages/server",
+    "start:server": "npm run start --workspace=packages/server",
+    "dev:server": "npm run dev --workspace=packages/server",
+    "build:userscript": "npm run build --workspace=packages/userscript",
+    "dev:userscript": "npm run dev --workspace=packages/userscript",
+    "build:types": "npm run build --workspace=packages/types"
+  }
+}
