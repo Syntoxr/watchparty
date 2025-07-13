@@ -11,6 +11,7 @@
     "dev:server": "npm run dev --workspace=packages/server",
     "build:userscript": "npm run build --workspace=packages/userscript",
     "dev:userscript": "npm run dev --workspace=packages/userscript",
-    "build:types": "npm run build --workspace=packages/types"
+    "build:types": "npm run build --workspace=packages/types",
+    "prepare": "husky install"
   }
 }

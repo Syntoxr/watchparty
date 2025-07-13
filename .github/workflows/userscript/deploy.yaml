@@ -1,12 +1,16 @@
-name: deploy-preview
+name: deploy
+
+defaults:
+  run:
+    working-directory: ./packages/userscript
 
 permissions:
   contents: write
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+  release:
+    types: [published]
 
 jobs:
   deploy:
@@ -28,8 +32,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: preview-dist
-          commit_message: deploy ${{ github.ref }}
           enable_jekyll: true
+          commit_message: deploy ${{ github.ref }}
           user_name: github-actions[bot]
           user_email: github-actions[bot]@users.noreply.github.com

@@ -5,7 +5,13 @@ on:
     branches-ignore:
       - gh-pages
       - "renovate/**"
+    paths:
+      - ./packages/userscript
   pull_request:
+
+defaults:
+  run:
+    working-directory: ./packages/userscript
 
 jobs:
   build:
